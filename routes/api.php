@@ -21,3 +21,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('index',function (){
     return "hello world";
 });
+
+Route::prefix('wx',)->group(function (){
+    //test demo
+    Route::get('token',[\App\Http\Controllers\WechatController::class,'loginTest']);
+
+});
